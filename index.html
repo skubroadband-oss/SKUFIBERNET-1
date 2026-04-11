@@ -3,67 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SKU FIBERNET - High Speed Internet & IPTV</title>
+    <title>SKU FIBERNET - Official ADIGITAL Partner</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap');
-        :root { --primary: #003366; --secondary: #f1c40f; --success: #25d366; --white: #ffffff; }
+        :root { --primary: #001a33; --secondary: #f1c40f; --success: #25d366; --white: #ffffff; --accent: #e50914; }
         * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
-        body { font-family: 'Poppins', sans-serif; background-color: #f8fafc; color: #333; overflow-x: hidden; }
+        body { font-family: 'Poppins', sans-serif; background-color: #f8fafc; color: #333; line-height: 1.6; }
 
-        nav { background: var(--white); padding: 15px 8%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
-        .logo { font-size: 26px; font-weight: 900; color: var(--primary); text-decoration: none; }
+        /* Navigation - Right Menu */
+        nav { background: var(--white); padding: 15px 8%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        .logo { font-size: 24px; font-weight: 900; color: var(--primary); text-decoration: none; }
         .logo span { color: var(--secondary); }
-        .nav-links a { text-decoration: none; font-weight: 700; font-size: 14px; color: #555; text-transform: uppercase; margin-left: 20px; }
+        .nav-links { display: flex; gap: 20px; }
+        .nav-links a { text-decoration: none; color: var(--primary); font-weight: 700; font-size: 14px; text-transform: uppercase; }
 
-        .hero { background: linear-gradient(rgba(0,51,102,0.85), rgba(0,51,102,0.85)), url('https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1350&q=80'); background-size: cover; color: var(--white); padding: 80px 8%; text-align: center; border-bottom: 6px solid var(--secondary); }
-        
-        /* Demo Button Styling */
-        .demo-btn {
-            background: #e50914; color: white; padding: 15px 35px; border-radius: 50px; text-decoration: none;
-            font-weight: 800; font-size: 18px; display: inline-block; margin-top: 25px;
-            box-shadow: 0 0 20px rgba(229, 9, 20, 0.5); border: 2px solid white; transition: 0.3s;
-            animation: glowing 1.5s infinite;
-        }
-        @keyframes glowing {
-            0% { transform: scale(1); box-shadow: 0 0 10px rgba(229, 9, 20, 0.5); }
-            50% { transform: scale(1.05); box-shadow: 0 0 30px rgba(229, 9, 20, 0.8); }
-            100% { transform: scale(1); box-shadow: 0 0 10px rgba(229, 9, 20, 0.5); }
-        }
+        /* Hero */
+        .hero { background: linear-gradient(rgba(0,26,51,0.85), rgba(0,26,51,0.85)), url('https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1350&q=80'); background-size: cover; color: var(--white); padding: 100px 8%; text-align: center; }
+        .hero h1 { font-size: 3.2rem; font-weight: 900; line-height: 1.1; margin-bottom: 15px; }
+        .demo-btn { background: var(--accent); color: white; padding: 18px 45px; border-radius: 50px; text-decoration: none; font-weight: 800; display: inline-block; box-shadow: 0 10px 25px rgba(229, 9, 20, 0.4); border: 2px solid white; animation: pulse 2s infinite; margin-top: 20px; }
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
 
-        section { padding: 60px 8%; }
-        .section-title { text-align: center; margin-bottom: 50px; font-weight: 900; color: var(--primary); font-size: 2.2rem; }
+        section { padding: 80px 8%; }
+        .section-title { text-align: center; margin-bottom: 50px; font-weight: 900; color: var(--primary); font-size: 2.5rem; }
 
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-        .card { background: var(--white); border-radius: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border: 1px solid #eee; text-align: center; padding-bottom: 30px; transition: 0.3s; }
-        .card-h { background: var(--primary); color: white; padding: 10px; font-weight: 700; font-size: 11px; border-radius: 20px 20px 0 0; }
-        .price-box { padding: 30px 20px; }
-        .price-box h2 { font-size: 2.8rem; font-weight: 900; }
-        .book-btn { background: var(--primary); color: white; padding: 12px 25px; border-radius: 10px; text-decoration: none; font-weight: 700; display: inline-block; cursor: pointer; }
+        /* Plans */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        .card { background: var(--white); border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center; border: 1px solid #eee; transition: 0.3s; }
+        .card.popular { border: 4px solid var(--secondary); transform: scale(1.05); }
+        .card-h { background: var(--primary); color: white; padding: 12px; font-weight: 700; font-size: 12px; letter-spacing: 1px; }
+        .price-box { padding: 35px 20px; }
+        .price-box h2 { font-size: 3.5rem; color: var(--primary); font-weight: 900; }
+        .price-box p { font-weight: 700; font-size: 1.2rem; margin-bottom: 10px; }
+        .book-btn { background: var(--primary); color: white; padding: 15px; border-radius: 12px; text-decoration: none; font-weight: 800; display: block; margin: 0 30px 30px; cursor: pointer; border: none; }
+
+        /* About & Trust Section */
+        .about-wrap { background: var(--primary); color: white; border-radius: 50px 0; padding: 80px 8%; text-align: center; }
+        .about-content { max-width: 900px; margin: 0 auto; }
+        .about-content h2 { color: var(--secondary); font-size: 2.5rem; margin-bottom: 25px; }
+        .about-content p { font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px; text-align: justify; opacity: 0.9; }
+
+        .trust-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 25px; margin-top: 50px; }
+        .trust-card { background: rgba(255,255,255,0.08); padding: 30px; border-radius: 20px; text-align: center; border: 1px solid rgba(255,255,255,0.1); transition: 0.3s; }
+        .trust-card:hover { background: rgba(255,255,255,0.15); transform: translateY(-5px); }
+        .trust-card i { font-size: 40px; color: var(--secondary); margin-bottom: 20px; }
+        .trust-card h4 { font-weight: 800; color: #fff; margin-bottom: 10px; }
+        .trust-card p { font-size: 14px; color: #ddd; }
+
+        /* Address Cards */
+        .address-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
+        .addr-card { background: #fff; padding: 35px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border-top: 6px solid var(--primary); }
+        .addr-card h4 { color: var(--primary); margin-bottom: 15px; font-size: 1.3rem; font-weight: 800; }
+        .addr-card p { color: #555; font-weight: 600; font-size: 1rem; line-height: 1.5; }
+
+        /* OTT Section */
+        .ent-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 20px; }
+        .ent-card { background: white; padding: 25px; border-radius: 20px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .ent-card i { font-size: 40px; margin-bottom: 10px; color: var(--accent); }
 
         /* Form */
-        #booking-section { display: none; background: white; padding: 40px; border-radius: 30px; box-shadow: 0 15px 50px rgba(0,0,0,0.1); max-width: 600px; margin: 40px auto; border-top: 10px solid var(--secondary); }
-        .form-group { margin-bottom: 15px; text-align: left; }
-        .form-group label { display: block; margin-bottom: 5px; font-weight: 600; }
-        .form-group input, .form-group select { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 10px; }
-        .submit-btn { background: var(--success); color: white; padding: 15px; border: none; border-radius: 10px; font-weight: 700; width: 100%; cursor: pointer; font-size: 16px; }
+        #booking-section { display: none; background: white; padding: 40px; border-radius: 30px; max-width: 600px; margin: -40px auto 40px; box-shadow: 0 20px 50px rgba(0,0,0,0.2); border-top: 10px solid var(--success); position: relative; z-index: 10; }
+        .form-group input, .form-group select { width: 100%; padding: 15px; border: 2px solid #eee; border-radius: 12px; margin-bottom: 15px; }
+        .submit-btn { background: var(--success); color: white; padding: 18px; border: none; border-radius: 12px; width: 100%; font-weight: 800; cursor: pointer; font-size: 1.2rem; }
 
-        /* OTT Logos */
-        .ent-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 15px; text-align: center; }
-        .ent-card { background: white; padding: 20px; border-radius: 20px; border: 1px solid #eee; display: flex; flex-direction: column; align-items: center; box-shadow: 0 4px 10px rgba(0,0,0,0.05); transition: 0.3s; text-decoration: none; color: inherit; }
-        .ent-card:hover { transform: translateY(-5px); border-color: var(--secondary); }
-        .ent-card img { width: 100%; height: 50px; object-fit: contain; margin-bottom: 10px; }
-        .ent-card span { font-weight: 800; font-size: 13px; color: var(--primary); }
+        footer { background: #000b14; color: white; padding: 60px 8%; text-align: center; }
+        .wa-float { position: fixed; bottom: 30px; right: 30px; background: var(--success); color: white; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 35px; z-index: 1000; box-shadow: 0 10px 25px rgba(0,0,0,0.3); }
 
-        /* About Section */
-        .about-wrap { background: white; padding: 40px; border-radius: 25px; border-left: 12px solid var(--secondary); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-        .about-point { margin-bottom: 20px; }
-        .about-point h4 { color: var(--primary); margin-bottom: 5px; display: flex; align-items: center; gap: 10px; }
-        .address-box { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 15px; margin-top: 20px; }
-        .addr-card { background: #f8fafc; padding: 15px; border-radius: 15px; border: 1px solid #eee; }
-
-        footer { background: var(--primary); color: white; padding: 40px; text-align: center; }
-        .wa-float { position: fixed; bottom: 25px; right: 25px; background: var(--success); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; z-index: 1000; text-decoration: none; }
+        @media (max-width: 768px) { .nav-links { display: none; } .hero h1 { font-size: 2.2rem; } }
     </style>
 </head>
 <body>
@@ -72,97 +78,128 @@
     <a href="#" class="logo">SKU <span>FIBERNET</span></a>
     <div class="nav-links">
         <a href="#plans">Plans</a>
+        <a href="#about">Our Story</a>
         <a href="#ent">OTTs</a>
-        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
     </div>
 </nav>
 
-<section id="home" class="hero">
-    <h1>SKU FIBERNET PROVIDES <br>IPTV + INTERNET + OTTs</h1>
-    <p>Official Distributor for ADIGITAL (ANT TV) | Jangaon & Narmetta</p>
-    
+<section class="hero">
+    <h1>Powering Your Digital Life</h1>
+    <p>Official ADIGITAL (ANT TV) Partner | Trust Built Since 2013</p>
     <a href="https://www.adigital.tv/demo" target="_blank" class="demo-btn">
         <i class="fas fa-play-circle"></i> WATCH FREE LIVE DEMO
     </a>
 </section>
 
 <section id="plans">
-    <h2 class="section-title">Our Fiber Plans</h2>
+    <h2 class="section-title">Best Value Plans</h2>
     <div class="grid">
-        <div class="card"><div class="card-h">BASIC</div><div class="price-box"><h2>₹349</h2><p>30 Mbps Internet</p></div><div class="book-btn" onclick="openBooking('349_Plan')">Book Now</div></div>
-        <div class="card" style="border: 2px solid var(--secondary);"><div class="card-h" style="background:var(--secondary); color:#000;">POPULAR</div><div class="price-box"><h2>₹499</h2><p>30 Mbps + OTT + IPTV</p></div><div class="book-btn" onclick="openBooking('499_Plan')">Book Now</div></div>
-        <div class="card"><div class="card-h">ULTRA</div><div class="price-box"><h2>₹799</h2><p>100 Mbps Unlimited</p></div><div class="book-btn" onclick="openBooking('799_Plan')">Book Now</div></div>
-        <div class="card"><div class="card-h">PREMIUM</div><div class="price-box"><h2>₹999</h2><p>150 Mbps Speed</p></div><div class="book-btn" onclick="openBooking('999_Plan')">Book Now</div></div>
-        <div class="card"><div class="card-h">BUSINESS</div><div class="price-box"><h2>₹1599</h2><p>300 Mbps Pro</p></div><div class="book-btn" onclick="openBooking('1599_Plan')">Book Now</div></div>
+        <div class="card"><div class="card-h">VALUE PACK</div><div class="price-box"><h2>₹449</h2><p>20 Mbps Speed</p><span>IPTV HD Included</span></div><button class="book-btn" onclick="openBooking('₹449 Plan')">ACTIVATE NOW</button></div>
+        <div class="card"><div class="card-h">BASIC</div><div class="price-box"><h2>₹399</h2><p>15 Mbps Speed</p><span>Standard IPTV</span></div><button class="book-btn" onclick="openBooking('₹399 Plan')">ACTIVATE NOW</button></div>
+        <div class="card popular"><div class="card-h" style="background:var(--secondary); color:#000;">⭐ BEST SELLER</div><div class="price-box"><h2>₹600</h2><p>30 Mbps Speed</p><span>IPTV HD + Amazon Prime Lite</span></div><button class="book-btn" onclick="openBooking('₹600 Plan')" style="background:var(--accent);">BOOK NOW</button></div>
+        <div class="card"><div class="card-h">PRO INTERNET</div><div class="price-box"><h2>₹700</h2><p>100 Mbps Speed</p><span>High Speed Fiber</span></div><button class="book-btn" onclick="openBooking('₹700 Plan')">ACTIVATE NOW</button></div>
+        <div class="card"><div class="card-h">ULTRA PREMIUM</div><div class="price-box"><h2>₹900</h2><p>100 Mbps Speed</p><span>IPTV HD + Amazon Prime Lite</span></div><button class="book-btn" onclick="openBooking('₹900 Plan')">ACTIVATE NOW</button></div>
     </div>
 
     <div id="booking-section">
-        <h2 style="text-align: center; color: var(--primary); margin-bottom: 20px;">Connection Request</h2>
+        <h3 style="text-align:center; margin-bottom:20px;">Secure New Connection</h3>
         <form id="requestForm">
-            <div class="form-group"><label>Plan</label><input type="text" id="planName" readonly></div>
-            <div class="form-group"><label>Your Name</label><input type="text" id="custName" required></div>
-            <div class="form-group"><label>Mobile Number</label><input type="tel" id="custPhone" required></div>
+            <div class="form-group"><input type="text" id="planName" readonly style="font-weight:900; background:#f9f9f9;"></div>
+            <div class="form-group"><input type="text" id="custName" placeholder="Full Name" required></div>
+            <div class="form-group"><input type="tel" id="custPhone" placeholder="Mobile Number" required></div>
             <div class="form-group">
-                <label>Area</label>
                 <select id="mainArea" onchange="updateVillages()" required>
                     <option value="">-- Select Center --</option>
                     <option value="Narmetta">Narmetta</option>
-                    <option value="Cherial">Cherial</option>
                     <option value="Jangaon">Jangaon</option>
-                    <option value="Palakurthy">Palakurthy</option>
+                    <option value="Cherial">Cherial</option>
                 </select>
             </div>
-            <div class="form-group"><label>Village</label><select id="villageArea" required><option value="">-- Choose --</option></select></div>
+            <div class="form-group"><select id="villageArea" required><option value="">-- Choose Village --</option></select></div>
             <input type="hidden" id="lat"><input type="hidden" id="lon">
-            <button type="submit" class="submit-btn">Send via WhatsApp</button>
+            <button type="submit" class="submit-btn"><i class="fab fa-whatsapp"></i> CONNECT ON WHATSAPP</button>
         </form>
     </div>
 </section>
 
-<section id="ent" style="background: #f1f5f9;">
-    <h2 class="section-title">OTT Partners</h2>
+<section id="about" class="about-wrap">
+    <div class="about-content">
+        <h2>మా ప్రస్థానం - మీ నమ్మకం</h2>
+        <p>2013లో అతి తక్కువ ఆదాయంతో, ఎన్నో సవాళ్లను ఎదుర్కొంటూ ఒక చిన్న అడుగుతో మొదలైన <b>SKU FIBERNET</b> ప్రయాణం, ఈ రోజు జనగామ మరియు నర్మెట్ట ప్రాంతాల్లో వేలాది మందికి చేరువయ్యింది. మేము కేవలం వైర్లు మరియు కనెక్షన్లు ఇవ్వము; మేము మీ కుటుంబానికి అతుకులు లేని వినోదాన్ని అందిస్తాము.</p>
+        <p><b>ADIGITAL (ANT TV)</b> అఫీషియల్ డిస్ట్రిబ్యూటర్లుగా, నాణ్యమైన సర్వీస్ అందించడమే మా బాధ్యత. సమస్య చిన్నదైనా, పెద్దదైనా మేము వెంటనే స్పందిస్తాము, ఎందుకంటే మీ కష్టాన్ని మరియు మీ అవసరాన్ని మేము గౌరవిస్తాము.</p>
+        
+        <div class="trust-grid">
+            <div class="trust-card">
+                <i class="fas fa-headset"></i>
+                <h4>24/7 Support</h4>
+                <p>సమస్య ఏదైనా, పరిష్కారం వెంటనే. మా టీమ్ ఎల్లప్పుడూ మీ కోసం ఉంటుంది.</p>
+            </div>
+            <div class="trust-card">
+                <i class="fas fa-check-circle"></i>
+                <h4>Trusted Brand</h4>
+                <p>10 ఏళ్లుగా వేలాది మంది కస్టమర్ల నమ్మకాన్ని గెలుచుకున్న లోకల్ బ్రాండ్.</p>
+            </div>
+            <div class="trust-card">
+                <i class="fas fa-bolt"></i>
+                <h4>Fast Service</h4>
+                <p>కేవలం కొన్ని గంటల్లోనే కొత్త కనెక్షన్ యాక్టివేషన్. ఆలస్యం లేదు.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="ent">
+    <h2 class="section-title">Official OTT Partners</h2>
     <div class="ent-grid">
-        <a href="https://www.aha.video" target="_blank" class="ent-card"><img src="https://upload.wikimedia.org/wikipedia/it/e/ee/Aha_Logo.png"><span>Aha Video</span></a>
-        <a href="https://www.zee5.com" target="_blank" class="ent-card"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Zee5_logo.svg"><span>Zee5 Premium</span></a>
-        <a href="https://www.hotstar.com" target="_blank" class="ent-card"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Disney%2B_Hotstar_logo.svg"><span>Hotstar</span></a>
-        <a href="https://www.primevideo.com" target="_blank" class="ent-card"><img src="https://upload.wikimedia.org/wikipedia/commons/f/f1/Prime_Video.png"><span>Amazon Prime</span></a>
-        <a href="https://www.netflix.com" target="_blank" class="ent-card"><img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"><span>Netflix</span></a>
-        <a href="https://www.sunnxt.com" target="_blank" class="ent-card"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Sun_NXT_logo.png/640px-Sun_NXT_logo.png"><span>Sun NXT</span></a>
+        <div class="ent-card"><i class="fas fa-play" style="color:#ff4500;"></i><br><span>Aha Video</span></div>
+        <div class="ent-card"><i class="fas fa-tv" style="color:#8230c6;"></i><br><span>Zee5</span></div>
+        <div class="ent-card"><i class="fas fa-film" style="color:#001529;"></i><br><span>Hotstar</span></div>
+        <div class="ent-card"><i class="fab fa-amazon" style="color:#00a8e1;"></i><br><span>Prime Video</span></div>
+        <div class="ent-card"><i class="fab fa-netflix" style="color:#e50914;"></i><br><span>Netflix</span></div>
+        <div class="ent-card"><i class="fas fa-bolt" style="color:#f1c40f;"></i><br><span>Sun NXT</span></div>
     </div>
 </section>
 
-<section id="about">
-    <div class="about-wrap">
-        <h2>About SKU FIBERNET</h2>
-        <div class="about-point">
-            <h4><i class="fas fa-history"></i> Since 2013</h4>
-            <p>Providing reliable fiber internet services for over a decade in Telangana.</p>
+<section id="contact" style="background: #f0f4f8;">
+    <h2 class="section-title">Our Offices</h2>
+    <div class="address-grid">
+        <div class="addr-card">
+            <h4><i class="fas fa-map-marker-alt"></i> Narmetta Office (HQ)</h4>
+            <p>H.No: 6-36, Beside Bank of Baroda,<br>Main Road, Narmetta - 506167</p>
         </div>
-        <div class="about-point">
-            <h4><i class="fas fa-award"></i> Official Partner</h4>
-            <p>State Distributor for <b>ADIGITAL (ANT TV)</b>.</p>
+        <div class="addr-card">
+            <h4><i class="fas fa-map-marker-alt"></i> Jangaon Branch</h4>
+            <p>Vasavi Colony, Beside Main Road,<br>Jangaon, Telangana - 506167</p>
         </div>
-        <div class="address-box">
-            <div class="addr-card"><b>Narmetta (Main):</b><br>#6-36, Near Bank of Baroda, Narmetta - 506167</div>
-            <div class="addr-card"><b>Jangaon Office:</b><br>Vasavi Colony, Jangaon - 506167</div>
+        <div class="addr-card">
+            <h4><i class="fas fa-phone-alt"></i> Help Line</h4>
+            <p>Mobile: 9100704026<br>Email: info@skugroups.in</p>
         </div>
     </div>
 </section>
 
-<footer><p>© 2026 SKU GROUPS | 9100704026</p></footer>
+<footer>
+    <p>© 2026 SKU FIBERNET | Empowering Your Digital World</p>
+</footer>
+
 <a href="https://wa.me/919100704026" class="wa-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
 <script>
-    const vData = {"Narmetta":["Narmetta","Agapeta","Machupahad","Hanumanthapur","Veldanda","Tharigoppula"],"Cherial":["Cherial","Komuravelli"],"Jangaon":["Jangaon","Raghunathpally","Bachannpeta"],"Palakurthy":["Palakurthy","Gudur"]};
+    const vData = {
+        "Narmetta":["Narmetta","Agapeta","Machupahad","Hanumanthapur","Veldanda"],
+        "Jangaon":["Jangaon Town","Raghunathpally","Bachannpeta"],
+        "Cherial":["Cherial Town","Komuravelli"]
+    };
     function updateVillages(){
         const m = document.getElementById('mainArea').value;
         const v = document.getElementById('villageArea');
-        v.innerHTML = '<option value="">-- Select --</option>';
+        v.innerHTML = '<option value="">-- Choose Village --</option>';
         if(vData[m]) vData[m].forEach(x => { let o = document.createElement('option'); o.value=x; o.text=x; v.add(o); });
     }
     function openBooking(p){
         document.getElementById('booking-section').style.display = 'block';
-        document.getElementById('planName').value = p;
+        document.getElementById('planName').value = "Connecting to: " + p;
         document.getElementById('booking-section').scrollIntoView();
         if(navigator.geolocation) navigator.geolocation.getCurrentPosition(pos => {
             document.getElementById('lat').value = pos.coords.latitude;
@@ -171,8 +208,8 @@
     }
     document.getElementById('requestForm').addEventListener('submit', function(e){
         e.preventDefault();
-        const msg = `*NEW BOOKING*\nPlan: ${document.getElementById('planName').value}\nName: ${document.getElementById('custName').value}\nArea: ${document.getElementById('mainArea').value}\nVillage: ${document.getElementById('villageArea').value}\nMap: http://maps.google.com/?q=${document.getElementById('lat').value},${document.getElementById('lon').value}`;
-        window.open(`https://wa.me/919100704026?text=${encodeURIComponent(msg)}`, '_blank');
+        const msg = `*NEW SKU FIBERNET BOOKING*%0APlan: ${document.getElementById('planName').value}%0AName: ${document.getElementById('custName').value}%0AArea: ${document.getElementById('mainArea').value}%0AVillage: ${document.getElementById('villageArea').value}%0ALocation: https://www.google.com/maps?q=${document.getElementById('lat').value},${document.getElementById('lon').value}`;
+        window.open(`https://wa.me/919100704026?text=${msg}`, '_blank');
     });
 </script>
 </body>
