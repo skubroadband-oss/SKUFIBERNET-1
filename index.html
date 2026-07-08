@@ -2,215 +2,92 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SKU FIBERNET - Official ADIGITAL Partner</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>SKU FIBERNET | Home</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap');
-        :root { --primary: #001a33; --secondary: #f1c40f; --success: #25d366; --white: #ffffff; --accent: #e50914; }
-        * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
-        body { font-family: 'Poppins', sans-serif; background-color: #f8fafc; color: #333; line-height: 1.6; }
-
-        /* Navigation - Right Menu */
-        nav { background: var(--white); padding: 15px 8%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-        .logo { font-size: 24px; font-weight: 900; color: var(--primary); text-decoration: none; }
-        .logo span { color: var(--secondary); }
-        .nav-links { display: flex; gap: 20px; }
-        .nav-links a { text-decoration: none; color: var(--primary); font-weight: 700; font-size: 14px; text-transform: uppercase; }
-
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        body { font-family: 'Poppins', sans-serif; margin: 0; background: #ffffff; color: #1e293b; }
+        
+        /* Navigation */
+        nav { padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; background: #ffffff; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        nav .logo img { height: 50px; width: auto; } 
+        nav a { color: #1e3a8a; margin-left: 20px; text-decoration: none; font-weight: 600; }
+        
         /* Hero */
-        .hero { background: linear-gradient(rgba(0,26,51,0.85), rgba(0,26,51,0.85)), url('https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1350&q=80'); background-size: cover; color: var(--white); padding: 100px 8%; text-align: center; }
-        .hero h1 { font-size: 3.2rem; font-weight: 900; line-height: 1.1; margin-bottom: 15px; }
-        .demo-btn { background: var(--accent); color: white; padding: 18px 45px; border-radius: 50px; text-decoration: none; font-weight: 800; display: inline-block; box-shadow: 0 10px 25px rgba(229, 9, 20, 0.4); border: 2px solid white; animation: pulse 2s infinite; margin-top: 20px; }
-        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
-
-        section { padding: 80px 8%; }
-        .section-title { text-align: center; margin-bottom: 50px; font-weight: 900; color: var(--primary); font-size: 2.5rem; }
-
-        /* Plans */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
-        .card { background: var(--white); border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center; border: 1px solid #eee; transition: 0.3s; }
-        .card.popular { border: 4px solid var(--secondary); transform: scale(1.05); }
-        .card-h { background: var(--primary); color: white; padding: 12px; font-weight: 700; font-size: 12px; letter-spacing: 1px; }
-        .price-box { padding: 35px 20px; }
-        .price-box h2 { font-size: 3.5rem; color: var(--primary); font-weight: 900; }
-        .price-box p { font-weight: 700; font-size: 1.2rem; margin-bottom: 10px; }
-        .book-btn { background: var(--primary); color: white; padding: 15px; border-radius: 12px; text-decoration: none; font-weight: 800; display: block; margin: 0 30px 30px; cursor: pointer; border: none; }
-
-        /* About & Trust Section */
-        .about-wrap { background: var(--primary); color: white; border-radius: 50px 0; padding: 80px 8%; text-align: center; }
-        .about-content { max-width: 900px; margin: 0 auto; }
-        .about-content h2 { color: var(--secondary); font-size: 2.5rem; margin-bottom: 25px; }
-        .about-content p { font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px; text-align: justify; opacity: 0.9; }
-
-        .trust-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 25px; margin-top: 50px; }
-        .trust-card { background: rgba(255,255,255,0.08); padding: 30px; border-radius: 20px; text-align: center; border: 1px solid rgba(255,255,255,0.1); transition: 0.3s; }
-        .trust-card:hover { background: rgba(255,255,255,0.15); transform: translateY(-5px); }
-        .trust-card i { font-size: 40px; color: var(--secondary); margin-bottom: 20px; }
-        .trust-card h4 { font-weight: 800; color: #fff; margin-bottom: 10px; }
-        .trust-card p { font-size: 14px; color: #ddd; }
-
-        /* Address Cards */
-        .address-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
-        .addr-card { background: #fff; padding: 35px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border-top: 6px solid var(--primary); }
-        .addr-card h4 { color: var(--primary); margin-bottom: 15px; font-size: 1.3rem; font-weight: 800; }
-        .addr-card p { color: #555; font-weight: 600; font-size: 1rem; line-height: 1.5; }
-
-        /* OTT Section */
-        .ent-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 20px; }
-        .ent-card { background: white; padding: 25px; border-radius: 20px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
-        .ent-card i { font-size: 40px; margin-bottom: 10px; color: var(--accent); }
-
-        /* Form */
-        #booking-section { display: none; background: white; padding: 40px; border-radius: 30px; max-width: 600px; margin: -40px auto 40px; box-shadow: 0 20px 50px rgba(0,0,0,0.2); border-top: 10px solid var(--success); position: relative; z-index: 10; }
-        .form-group input, .form-group select { width: 100%; padding: 15px; border: 2px solid #eee; border-radius: 12px; margin-bottom: 15px; }
-        .submit-btn { background: var(--success); color: white; padding: 18px; border: none; border-radius: 12px; width: 100%; font-weight: 800; cursor: pointer; font-size: 1.2rem; }
-
-        footer { background: #000b14; color: white; padding: 60px 8%; text-align: center; }
-        .wa-float { position: fixed; bottom: 30px; right: 30px; background: var(--success); color: white; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 35px; z-index: 1000; box-shadow: 0 10px 25px rgba(0,0,0,0.3); }
-
-        @media (max-width: 768px) { .nav-links { display: none; } .hero h1 { font-size: 2.2rem; } }
+        .hero { background: linear-gradient(135deg, #1e3a8a, #0f172a); color: white; padding: 80px 20px; text-align: center; }
+        
+        /* Plans Section (White/Crystal Look) */
+        .plans-section { padding: 60px 5%; text-align: center; background: linear-gradient(180deg, #f0f9ff 0%, #ffffff 100%); }
+        .cards-wrapper { display: flex; justify-content: center; gap: 30px; margin-top: 30px; flex-wrap: wrap; }
+        .card { padding: 30px; border-radius: 20px; border: 1px solid #e2e8f0; width: 280px; background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+        
+        /* Footer */
+        footer { background: #0f172a; color: #cbd5e1; padding: 50px 5%; text-align: center; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; text-align: left; }
+        .social-btn { display: inline-block; padding: 10px 20px; background: #e11d48; color: white; border-radius: 5px; text-decoration: none; margin-top: 10px; font-weight: bold; }
+        .footer-logo { margin-bottom: 15px; }
+        .footer-logo img { height: 60px; }
     </style>
 </head>
 <body>
 
-<nav>
-    <a href="#" class="logo">SKU <span>FIBERNET</span></a>
-    <div class="nav-links">
-        <a href="#plans">Plans</a>
-        <a href="#about">Our Story</a>
-        <a href="#ent">OTTs</a>
-        <a href="#contact">Contact</a>
-    </div>
-</nav>
+    <nav>
+        <div class="logo">
+            <img src="logo.png.png" alt="SKU Logo">
+        </div>
+        <div>
+            <a href="index.html">Home</a>
+            <a href="plans.html">Plans</a>
+            <a href="services.html">Services</a>
+            <a href="billing.html">Billing</a>
+            <a href="about.html">About</a>
+        </div>
+    </nav>
 
-<section class="hero">
-    <h1>Powering Your Digital Life</h1>
-    <p>Official ADIGITAL (ANT TV) Partner | Trust Built Since 2013</p>
-    <a href="https://www.adigital.tv/demo" target="_blank" class="demo-btn">
-        <i class="fas fa-play-circle"></i> WATCH FREE LIVE DEMO
-    </a>
-</section>
-
-<section id="plans">
-    <h2 class="section-title">Best Value Plans</h2>
-    <div class="grid">
-        <div class="card"><div class="card-h">VALUE PACK</div><div class="price-box"><h2>₹449</h2><p>20 Mbps Speed</p><span>IPTV HD Included</span></div><button class="book-btn" onclick="openBooking('₹449 Plan')">ACTIVATE NOW</button></div>
-        <div class="card"><div class="card-h">BASIC</div><div class="price-box"><h2>₹399</h2><p>15 Mbps Speed</p><span>Standard IPTV</span></div><button class="book-btn" onclick="openBooking('₹399 Plan')">ACTIVATE NOW</button></div>
-        <div class="card popular"><div class="card-h" style="background:var(--secondary); color:#000;">⭐ BEST SELLER</div><div class="price-box"><h2>₹600</h2><p>30 Mbps Speed</p><span>IPTV HD + Amazon Prime Lite</span></div><button class="book-btn" onclick="openBooking('₹600 Plan')" style="background:var(--accent);">BOOK NOW</button></div>
-        <div class="card"><div class="card-h">PRO INTERNET</div><div class="price-box"><h2>₹700</h2><p>100 Mbps Speed</p><span>High Speed Fiber</span></div><button class="book-btn" onclick="openBooking('₹700 Plan')">ACTIVATE NOW</button></div>
-        <div class="card"><div class="card-h">ULTRA PREMIUM</div><div class="price-box"><h2>₹900</h2><p>100 Mbps Speed</p><span>IPTV HD + Amazon Prime Lite</span></div><button class="book-btn" onclick="openBooking('₹900 Plan')">ACTIVATE NOW</button></div>
+    <div class="hero">
+        <h1 style="font-size: 3rem; margin: 0;">Welcome to SKU FIBERNET</h1>
+        <p style="font-size: 1.2rem; opacity: 0.9;">High-Speed Connectivity & Security Solutions</p>
     </div>
 
-    <div id="booking-section">
-        <h3 style="text-align:center; margin-bottom:20px;">Secure New Connection</h3>
-        <form id="requestForm">
-            <div class="form-group"><input type="text" id="planName" readonly style="font-weight:900; background:#f9f9f9;"></div>
-            <div class="form-group"><input type="text" id="custName" placeholder="Full Name" required></div>
-            <div class="form-group"><input type="tel" id="custPhone" placeholder="Mobile Number" required></div>
-            <div class="form-group">
-                <select id="mainArea" onchange="updateVillages()" required>
-                    <option value="">-- Select Center --</option>
-                    <option value="Narmetta">Narmetta</option>
-                    <option value="Jangaon">Jangaon</option>
-                    <option value="Cherial">Cherial</option>
-                </select>
+    <section class="plans-section">
+        <h2 style="font-size: 2.2rem; color: #1e3a8a; margin-bottom: 10px;">Our Popular Plans</h2>
+        <div class="cards-wrapper">
+            <div class="card">
+                <h3 style="color: #1e3a8a;">Starter Plan</h3>
+                <h2 style="font-size: 2.5rem; margin: 10px 0;">₹299</h2>
+                <p>High-Speed Internet</p>
             </div>
-            <div class="form-group"><select id="villageArea" required><option value="">-- Choose Village --</option></select></div>
-            <input type="hidden" id="lat"><input type="hidden" id="lon">
-            <button type="submit" class="submit-btn"><i class="fab fa-whatsapp"></i> CONNECT ON WHATSAPP</button>
-        </form>
-    </div>
-</section>
-
-<section id="about" class="about-wrap">
-    <div class="about-content">
-        <h2>మా ప్రస్థానం - మీ నమ్మకం</h2>
-        <p>2013లో అతి తక్కువ ఆదాయంతో, ఎన్నో సవాళ్లను ఎదుర్కొంటూ ఒక చిన్న అడుగుతో మొదలైన <b>SKU FIBERNET</b> ప్రయాణం, ఈ రోజు జనగామ మరియు నర్మెట్ట ప్రాంతాల్లో వేలాది మందికి చేరువయ్యింది. మేము కేవలం వైర్లు మరియు కనెక్షన్లు ఇవ్వము; మేము మీ కుటుంబానికి అతుకులు లేని వినోదాన్ని అందిస్తాము.</p>
-        <p><b>ADIGITAL (ANT TV)</b> అఫీషియల్ డిస్ట్రిబ్యూటర్లుగా, నాణ్యమైన సర్వీస్ అందించడమే మా బాధ్యత. సమస్య చిన్నదైనా, పెద్దదైనా మేము వెంటనే స్పందిస్తాము, ఎందుకంటే మీ కష్టాన్ని మరియు మీ అవసరాన్ని మేము గౌరవిస్తాము.</p>
-        
-        <div class="trust-grid">
-            <div class="trust-card">
-                <i class="fas fa-headset"></i>
-                <h4>24/7 Support</h4>
-                <p>సమస్య ఏదైనా, పరిష్కారం వెంటనే. మా టీమ్ ఎల్లప్పుడూ మీ కోసం ఉంటుంది.</p>
-            </div>
-            <div class="trust-card">
-                <i class="fas fa-check-circle"></i>
-                <h4>Trusted Brand</h4>
-                <p>10 ఏళ్లుగా వేలాది మంది కస్టమర్ల నమ్మకాన్ని గెలుచుకున్న లోకల్ బ్రాండ్.</p>
-            </div>
-            <div class="trust-card">
-                <i class="fas fa-bolt"></i>
-                <h4>Fast Service</h4>
-                <p>కేవలం కొన్ని గంటల్లోనే కొత్త కనెక్షన్ యాక్టివేషన్. ఆలస్యం లేదు.</p>
+            <div class="card" style="border-color: #059669;">
+                <h3 style="color: #059669;">Best Value</h3>
+                <h2 style="font-size: 2.5rem; margin: 10px 0;">₹399</h2>
+                <p>Internet + IPTV</p>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section id="ent">
-    <h2 class="section-title">Official OTT Partners</h2>
-    <div class="ent-grid">
-        <div class="ent-card"><i class="fas fa-play" style="color:#ff4500;"></i><br><span>Aha Video</span></div>
-        <div class="ent-card"><i class="fas fa-tv" style="color:#8230c6;"></i><br><span>Zee5</span></div>
-        <div class="ent-card"><i class="fas fa-film" style="color:#001529;"></i><br><span>Hotstar</span></div>
-        <div class="ent-card"><i class="fab fa-amazon" style="color:#00a8e1;"></i><br><span>Prime Video</span></div>
-        <div class="ent-card"><i class="fab fa-netflix" style="color:#e50914;"></i><br><span>Netflix</span></div>
-        <div class="ent-card"><i class="fas fa-bolt" style="color:#f1c40f;"></i><br><span>Sun NXT</span></div>
-    </div>
-</section>
-
-<section id="contact" style="background: #f0f4f8;">
-    <h2 class="section-title">Our Offices</h2>
-    <div class="address-grid">
-        <div class="addr-card">
-            <h4><i class="fas fa-map-marker-alt"></i> Narmetta Office (HQ)</h4>
-            <p>H.No: 6-36, Beside Bank of Baroda,<br>Main Road, Narmetta - 506167</p>
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <h3>POWERED BY</h3>
+                <p>BSNL, RAILTEL, PRIVATE ISP</p>
+            </div>
+            <div>
+                <h3>FOLLOW US</h3>
+                <a href="https://instagram.com/skufibernet" class="social-btn" target="_blank">Instagram</a>
+            </div>
+            <div>
+                <div class="footer-logo">
+                    <img src="logo.png.png" alt="SKU Logo">
+                </div>
+                <h3>Our Offices</h3>
+                <p><strong>Narmetta Office (HQ):</strong><br>H.No: 6-36, Beside Bank of Baroda, Main Road, Narmetta - 506167</p>
+                <p><strong>Jangaon Branch:</strong><br>Vasavi Colony, Beside Main Road, Jangaon, Telangana - 506167</p>
+                <p><strong>Help Line:</strong><br>Mobile: 9100704026<br>Email: info@skugroups.in</p>
+            </div>
         </div>
-        <div class="addr-card">
-            <h4><i class="fas fa-map-marker-alt"></i> Jangaon Branch</h4>
-            <p>Vasavi Colony, Beside Main Road,<br>Jangaon, Telangana - 506167</p>
-        </div>
-        <div class="addr-card">
-            <h4><i class="fas fa-phone-alt"></i> Help Line</h4>
-            <p>Mobile: 9100704026<br>Email: info@skugroups.in</p>
-        </div>
-    </div>
-</section>
+        <p style="margin-top: 40px; border-top: 1px solid #1e293b; padding-top: 20px;">
+            © 2026 SKU FIBERNET | Empowering Your Digital World
+        </p>
+    </footer>
 
-<footer>
-    <p>© 2026 SKU FIBERNET | Empowering Your Digital World</p>
-</footer>
-
-<a href="https://wa.me/919100704026" class="wa-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
-
-<script>
-    const vData = {
-        "Narmetta":["Narmetta","Agapeta","Machupahad","Hanumanthapur","Veldanda"],
-        "Jangaon":["Jangaon Town","Raghunathpally","Bachannpeta"],
-        "Cherial":["Cherial Town","Komuravelli"]
-    };
-    function updateVillages(){
-        const m = document.getElementById('mainArea').value;
-        const v = document.getElementById('villageArea');
-        v.innerHTML = '<option value="">-- Choose Village --</option>';
-        if(vData[m]) vData[m].forEach(x => { let o = document.createElement('option'); o.value=x; o.text=x; v.add(o); });
-    }
-    function openBooking(p){
-        document.getElementById('booking-section').style.display = 'block';
-        document.getElementById('planName').value = "Connecting to: " + p;
-        document.getElementById('booking-section').scrollIntoView();
-        if(navigator.geolocation) navigator.geolocation.getCurrentPosition(pos => {
-            document.getElementById('lat').value = pos.coords.latitude;
-            document.getElementById('lon').value = pos.coords.longitude;
-        });
-    }
-    document.getElementById('requestForm').addEventListener('submit', function(e){
-        e.preventDefault();
-        const msg = `*NEW SKU FIBERNET BOOKING*%0APlan: ${document.getElementById('planName').value}%0AName: ${document.getElementById('custName').value}%0AArea: ${document.getElementById('mainArea').value}%0AVillage: ${document.getElementById('villageArea').value}%0ALocation: https://www.google.com/maps?q=${document.getElementById('lat').value},${document.getElementById('lon').value}`;
-        window.open(`https://wa.me/919100704026?text=${msg}`, '_blank');
-    });
-</script>
 </body>
 </html>

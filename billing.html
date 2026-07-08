@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Billing & Dashboard | SKU Group</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background: #f1f5f9; margin: 0; padding: 0; }
+        nav { background: #1e3a8a; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; color: white; }
+        nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: 600; }
+        .container { padding: 40px 20px; max-width: 650px; margin: auto; }
+        .card { background: white; padding: 40px; border-radius: 20px; border-top: 8px solid #1e3a8a; box-shadow: 0 10px 25px rgba(0,0,0,0.1); text-align: center; }
+        .btn-lmo { display: block; width: 100%; padding: 18px; background: #1e3a8a; color: white; border: none; border-radius: 12px; font-weight: bold; text-align: center; text-decoration: none; font-size: 1.1rem; margin-top: 20px; }
+        .btn-whatsapp { background: #059669; margin-top: 20px; }
+        .alert { background: #fff1f2; border: 1px solid #fecaca; padding: 15px; border-radius: 10px; color: #991b1b; font-size: 0.9rem; margin-top: 25px; text-align: left; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div style="font-size: 1.5rem; font-weight: bold;">SKU GROUP</div>
+        <div>
+            <a href="index.html">Home</a>
+            <a href="plans.html">Plans</a>
+            <a href="services.html">Services</a>
+            <a href="billing.html">Billing</a>
+            <a href="about.html">About</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="card">
+            <h1>Customer Dashboard</h1>
+            <p style="color: #475569;">Login to your dashboard to view usage and plans.</p>
+            
+            <!-- LMO Dashboard Login -->
+            <a href="https://lmo.cableway.in/login" target="_blank" class="btn-lmo">CUSTOMER DASHBOARD LOGIN</a>
+            
+            <!-- WhatsApp Security Verification -->
+            <a href="https://wa.me/919100704026?text=I%20would%20like%20to%20pay%20my%20bill.%20Please%20send%20me%20your%20verified%20payment%20details." target="_blank" class="btn-lmo btn-whatsapp">PAY BILL VIA WHATSAPP (SECURE)</a>
+
+            <!-- Security Warning -->
+            <div class="alert">
+                <strong>⚠️ SECURITY ALERT:</strong> To ensure your payment is safe, we do not display UPI IDs on our website. Please click the "Pay Bill via WhatsApp" button. We will send you our verified business payment details personally. Always confirm your status in the dashboard after payment.
+            </div>
+        </div>
+    </div>
+</body>
+</html>

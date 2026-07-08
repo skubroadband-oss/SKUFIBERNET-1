@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SKU FIBERNET | Plans</title>
+    <style>
+        :root { --primary: #1e3a8a; --accent: #059669; --bg: #e2e8f0; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); margin: 0; padding: 0; }
+        
+        /* Navigation Bar */
+        nav { background: var(--primary); padding: 15px 40px; display: flex; justify-content: space-between; align-items: center; color: white; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+        nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
+
+        /* Page Content */
+        .container { padding: 40px; }
+        h1 { text-align: center; color: var(--primary); margin-bottom: 50px; }
+        .section-title { color: var(--primary); margin: 40px 0 20px; border-bottom: 3px solid var(--primary); display: inline-block; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        
+        .card { background: white; padding: 30px; border-radius: 20px; border: 1px solid #cbd5e1; box-shadow: 0 8px 16px rgba(0,0,0,0.1); text-align: center; }
+        .price { font-size: 1.8rem; font-weight: 800; color: var(--primary); margin: 15px 0; }
+        button { cursor: pointer; padding: 10px 18px; border-radius: 6px; border: none; font-weight: bold; margin: 5px; }
+        .btn-v { background: #64748b; color: white; }
+        .btn-b { background: var(--accent); color: white; }
+
+        #booking-area { display: none; background: #ffffff; padding: 40px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); max-width: 600px; margin: 60px auto; border-top: 6px solid var(--primary); }
+        input, select, textarea { width: 100%; padding: 14px; margin: 10px 0; border: 1px solid #cbd5e1; border-radius: 8px; }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div style="font-size: 1.5rem; font-weight: bold;">SKU GROUP</div>
+        <div>
+            <a href="index.html">Home</a>
+            <a href="plans.html">Plans</a>
+            <a href="services.html">Services</a>
+            <a href="billing.html">Billing</a>
+            <a href="about.html">About</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h1>SKU FIBERNET PREMIUM PLANS</h1>
+        
+        <h2 class="section-title">INTERNET PLANS</h2>
+        <div class="grid">
+            <div class="card"><h3>SKU 20MBPS</h3><div class="price">₹299/mo</div><button class="btn-v" onclick="this.nextElementSibling.nextElementSibling.style.display=(this.nextElementSibling.nextElementSibling.style.display=='block'?'none':'block')">View Details</button><button class="btn-b" onclick="bookPlan('SKU 20MBPS - ₹299')">Book Now</button><div class="details" style="display:none; font-size:0.9rem; margin-top:10px;">Unlimited Data | No OTTs | No IPTV</div></div>
+            <div class="card"><h3>SKU 30MBPS</h3><div class="price">₹399/mo</div><button class="btn-v" onclick="this.nextElementSibling.nextElementSibling.style.display=(this.nextElementSibling.nextElementSibling.style.display=='block'?'none':'block')">View Details</button><button class="btn-b" onclick="bookPlan('SKU 30MBPS - ₹399')">Book Now</button><div class="details" style="display:none; font-size:0.9rem; margin-top:10px;">Unlimited Data | No OTTs | No IPTV</div></div>
+            <div class="card"><h3>SKU 50MBPS</h3><div class="price">₹499/mo</div><button class="btn-v" onclick="this.nextElementSibling.nextElementSibling.style.display=(this.nextElementSibling.nextElementSibling.style.display=='block'?'none':'block')">View Details</button><button class="btn-b" onclick="bookPlan('SKU 50MBPS - ₹499')">Book Now</button><div class="details" style="display:none; font-size:0.9rem; margin-top:10px;">Unlimited Data | No OTTs | No IPTV</div></div>
+            <div class="card"><h3>SKU 100MBPS</h3><div class="price">₹799/mo</div><button class="btn-v" onclick="this.nextElementSibling.nextElementSibling.style.display=(this.nextElementSibling.nextElementSibling.style.display=='block'?'none':'block')">View Details</button><button class="btn-b" onclick="bookPlan('SKU 100MBPS - ₹799')">Book Now</button><div class="details" style="display:none; font-size:0.9rem; margin-top:10px;">Unlimited Data | Upto 300 Mbps Support</div></div>
+        </div>
+
+        <h2 class="section-title">IPTV PLANS</h2>
+        <div class="grid">
+            <div class="card"><h3>SKU BASIC 15MBPS</h3><div class="price">₹399/mo</div><button class="btn-v" onclick="this.nextElementSibling.nextElementSibling.style.display=(this.nextElementSibling.nextElementSibling.style.display=='block'?'none':'block')">View Details</button><button class="btn-b" onclick="bookPlan('SKU BASIC 15MBPS - ₹399')">Book Now</button><div class="details" style="display:none; font-size:0.9rem; margin-top:10px;">Unlimited Data | IPTV SD Pack</div></div>
+            <div class="card"><h3>SKU BASIC+ 20MBPS</h3><div class="price">₹499/mo</div><button class="btn-v" onclick="this.nextElementSibling.nextElementSibling.style.display=(this.nextElementSibling.nextElementSibling.style.display=='block'?'none':'block')">View Details</button><button class="btn-b" onclick="bookPlan('SKU BASIC+ 20MBPS - ₹499')">Book Now</button><div class="details" style="display:none; font-size:0.9rem; margin-top:10px;">Unlimited Data | IPTV SD Pack</div></div>
+            <div class="card"><h3>SKU TREND 50MBPS</h3><div class="price">₹699/mo</div><button class="btn-v" onclick="this.nextElementSibling.nextElementSibling.style.display=(this.nextElementSibling.nextElementSibling.style.display=='block'?'none':'block')">View Details</button><button class="btn-b" onclick="bookPlan('SKU TREND 50MBPS - ₹699')">Book Now</button><div class="details" style="display:none; font-size:0.9rem; margin-top:10px;">Unlimited Data | IPTV HD Pack</div></div>
+        </div>
+
+        <h2 class="section-title">OTT SUBSCRIPTIONS</h2>
+        <div class="grid">
+            <div class="card"><h3>SKU OTT 80</h3><div class="price">₹80</div><button class="btn-v" onclick="this.nextElementSibling.nextElementSibling.style.display=(this.nextElementSibling.nextElementSibling.style.display=='block'?'none':'block')">View Details</button><button class="btn-b" onclick="bookPlan('SKU OTT 80')">Book Now</button><div class="details" style="display:none; font-size:0.9rem; margin-top:10px;">Playbox, Aha, ETV Win</div></div>
+            <div class="card"><h3>SKU OTT 160</h3><div class="price">₹160</div><button class="btn-v" onclick="this.nextElementSibling.nextElementSibling.style.display=(this.nextElementSibling.nextElementSibling.style.display=='block'?'none':'block')">View Details</button><button class="btn-b" onclick="bookPlan('SKU OTT 160')">Book Now</button><div class="details" style="display:none; font-size:0.9rem; margin-top:10px;">Playbox, Aha, ETV Win, Zee5, SunNXT, Hungama</div></div>
+            <div class="card"><h3>SKU OTT 270</h3><div class="price">₹270</div><button class="btn-v" onclick="this.nextElementSibling.nextElementSibling.style.display=(this.nextElementSibling.nextElementSibling.style.display=='block'?'none':'block')">View Details</button><button class="btn-b" onclick="bookPlan('SKU OTT 270')">Book Now</button><div class="details" style="display:none; font-size:0.9rem; margin-top:10px;">Playbox, Prime, Aha, Hotstar, ETV Win, Zee5, SunNXT, SonyLiv</div></div>
+        </div>
+    </div>
+
+    <!-- Booking Form -->
+    <div id="booking-area">
+        <h2 style="text-align:center;">Book Plan: <span id="p-name"></span></h2>
+        <form id="bookingForm">
+            <label>Name*</label><input type="text" id="b-name" required>
+            <label>Surname*</label><input type="text" id="b-sur" required>
+            <label>Father Name*</label><input type="text" id="b-father" required>
+            <label>Mail ID*</label><input type="email" id="b-mail" required>
+            <label>Phone Number*</label><input type="tel" id="b-phone" required>
+            <label>WhatsApp Number*</label><input type="tel" id="b-whats" required>
+            <label>Select Location*</label>
+            <select id="b-loc" required><option value="">-- Choose Area --</option><option>NARMETTA</option><option>THARIGOPPULA</option><option>PALAKURTHY</option><option>JANGAON</option><option>RAGHUNATHPALLY</option><option>BACHANNAPETA</option><option>CHERIAL</option><option>KOMURAVELLI</option><option>KISTAMPETA</option><option>VECHARENI</option><option>MANSING THANDA</option><option>JALBAI THANDA</option><option>KOTHA THANDA</option><option>MACHUPAHAD</option><option>AGAPETA</option><option>GUNTURPALLI</option><option>VELDANDA</option><option>AMMAPURAM</option></select>
+            <label>Full Address with Pincode*</label><textarea id="b-add" required></textarea>
+            <button type="submit" style="width:100%; padding:18px; background:#059669; color:white; border:none; border-radius:8px; font-size:1.1rem; cursor:pointer;">SUBMIT & BOOK</button>
+        </form>
+    </div>
+
+    <script>
+        function bookPlan(n) { document.getElementById('booking-area').style.display='block'; document.getElementById('p-name').innerText=n; document.getElementById('booking-area').scrollIntoView({behavior:'smooth'}); }
+        document.getElementById('bookingForm').addEventListener('submit', function(e){
+            e.preventDefault();
+            const msg = `*Booking Request*%0APlan: ${document.getElementById('p-name').innerText}%0AName: ${document.getElementById('b-name').value} ${document.getElementById('b-sur').value}%0AFather: ${document.getElementById('b-father').value}%0AMail: ${document.getElementById('b-mail').value}%0APhone: ${document.getElementById('b-phone').value}%0AWhatsApp: ${document.getElementById('b-whats').value}%0ALocation: ${document.getElementById('b-loc').value}%0AAddress: ${document.getElementById('b-add').value}`;
+            window.open('https://wa.me/919100704026?text='+msg);
+        });
+    </script>
+</body>
+</html>

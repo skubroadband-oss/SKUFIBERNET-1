@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Services | SKU FIBERNET</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background: #f1f5f9; margin: 0; padding: 0; }
+        nav { background: #1e3a8a; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; color: white; }
+        nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: 600; }
+        
+        .container { padding: 50px 20px; max-width: 1000px; margin: auto; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        
+        .card { background: white; padding: 40px; border-radius: 20px; border-top: 5px solid #1e3a8a; box-shadow: 0 10px 25px rgba(0,0,0,0.1); text-align: center; }
+        .icon { font-size: 3rem; margin-bottom: 15px; }
+        .btn-book { background: #059669; color: white; border: none; padding: 12px 30px; border-radius: 8px; font-weight: bold; cursor: pointer; margin-top: 15px; }
+        
+        /* Why Choose Us Section */
+        .why-us { margin-top: 60px; background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px; }
+        .feature-item { padding: 20px; background: #f8fafc; border-radius: 15px; text-align: center; border: 1px solid #e2e8f0; }
+        
+        #booking-area { display: none; background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.15); max-width: 600px; margin: 40px auto; border-top: 8px solid #1e3a8a; }
+        input, textarea { width: 100%; padding: 15px; margin: 10px 0; border: 1px solid #cbd5e1; border-radius: 8px; box-sizing: border-box; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div style="font-size: 1.5rem; font-weight: bold;">SKU FIBERNET</div>
+        <div>
+            <a href="index.html">Home</a>
+            <a href="plans.html">Plans</a>
+            <a href="services.html">Services</a>
+            <a href="billing.html">Billing</a>
+            <a href="about.html">About</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1 style="text-align:center; color:#1e3a8a;">Our Expert Services</h1>
+        <div class="grid">
+            <div class="card">
+                <div class="icon">📷</div>
+                <h2>CCTV Installation</h2>
+                <p>Advanced IP camera setup & NVR surveillance for your home and business.</p>
+                <button class="btn-book" onclick="bookService('CCTV Installation')">Book Service</button>
+            </div>
+            <div class="card">
+                <div class="icon">🌐</div>
+                <h2>Network Mapping</h2>
+                <p>Structured LAN cabling & internal office networking solutions.</p>
+                <button class="btn-book" onclick="bookService('Network Mapping')">Book Service</button>
+            </div>
+            <div class="card">
+                <div class="icon">🚀</div>
+                <h2>Fiber Connectivity</h2>
+                <p>Ultra-reliable high-speed fiber internet infrastructure installation.</p>
+                <button class="btn-book" onclick="bookService('Fiber Connectivity')">Book Service</button>
+            </div>
+        </div>
+
+        <!-- Why Choose Us -->
+        <div class="why-us">
+            <h2 style="text-align:center; color:#1e3a8a;">Why Choose Us?</h2>
+            <div class="features-grid">
+                <div class="feature-item"><strong>24/7 Support</strong><br>Immediate resolution for any technical issues.</div>
+                <div class="feature-item"><strong>Trusted Brand</strong><br>Serving our community for over 10 years.</div>
+                <div class="feature-item"><strong>Fast Service</strong><br>Instant connection activation without delays.</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="booking-area">
+        <h2 style="text-align:center;">Request: <span id="s-name"></span></h2>
+        <form id="serviceForm">
+            <input type="text" id="b-name" placeholder="Full Name*" required>
+            <input type="tel" id="b-phone" placeholder="Phone Number*" required>
+            <textarea id="b-add" placeholder="Requirement/Address Details*" required></textarea>
+            <button type="submit" style="width:100%; padding:15px; background:#1e3a8a; color:white; border:none; border-radius:8px; cursor:pointer;">SEND REQUEST</button>
+        </form>
+    </div>
+
+    <script>
+        function bookService(name) { 
+            document.getElementById('booking-area').style.display='block'; 
+            document.getElementById('s-name').innerText=name; 
+            document.getElementById('booking-area').scrollIntoView({behavior:'smooth'}); 
+        }
+        document.getElementById('serviceForm').addEventListener('submit', function(e){
+            e.preventDefault();
+            const msg = `*Service Request*%0AService: ${document.getElementById('s-name').innerText}%0AName: ${document.getElementById('b-name').value}%0APhone: ${document.getElementById('b-phone').value}%0ADetails: ${document.getElementById('b-add').value}`;
+            window.open('https://wa.me/919100704026?text='+msg);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+/* SKU Broadband - Professional CSS */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap');
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Poppins', sans-serif; background: #f8f9fa; color: #333; line-height: 1.6; }
+
+/* Navigation */
+nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 8%; background: #fff; box-shadow: 0 4px 15px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
+.logo { font-weight: 800; color: #001a33; font-size: 20px; }
+.logo span { color: #007bff; }
+.nav-links a { margin-left: 20px; text-decoration: none; color: #333; font-weight: 600; font-size: 14px; transition: 0.3s; }
+.nav-links a:hover { color: #007bff; }
+.pay-btn { background: #007bff; color: #fff !important; padding: 10px 20px; border-radius: 5px; }
+
+/* Hero Section */
+.hero { background: #001a33; color: white; padding: 100px 8%; text-align: center; }
+.hero h1 { font-size: 3rem; margin-bottom: 20px; }
+.btn-blue { background: #007bff; color: white; padding: 15px 35px; border-radius: 50px; text-decoration: none; font-weight: 700; transition: 0.3s; }
+.btn-blue:hover { background: #0056b3; }
+.btn-outline { border: 2px solid white; color: white; padding: 13px 33px; border-radius: 50px; text-decoration: none; margin-left: 15px; }
+
+/* Grid & Cards (Plans & Services) */
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; padding: 50px 8%; }
+.card { background: white; padding: 40px 20px; border-radius: 20px; text-align: center; border: 1px solid #eee; transition: 0.4s; box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+.card:hover { transform: translateY(-15px); border-color: #007bff; box-shadow: 0 20px 40px rgba(0,123,255,0.1); }
+.price { font-size: 2.2rem; font-weight: 900; color: #007bff; margin: 15px 0; }
+
+/* WhatsApp Float */
+.wa-float { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; padding: 15px 22px; border-radius: 50px; font-size: 25px; z-index: 1000; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .nav-links { display: none; } /* Mobile lo menu hide cheyyadaniki, logic add cheyali */
+    .hero h1 { font-size: 2rem; }
+    .grid { grid-template-columns: 1fr; }
+}
